@@ -9,7 +9,7 @@ var options = {
 };
 //'/Users/natelevine/DevWeek16/Hackathon/Gauger/Speech2Text/R0010125.MP4'
 
-PythonShell.run('analyze_sentiment.py', options, function (err, results) {
+PythonShell.run('analyze_untabbed.py', options, function (err, results) {
   if (err) throw err;
 
   console.log('results: ', results);

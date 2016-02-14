@@ -8,9 +8,9 @@ hodApp = ""
 def asyncRequestCompleted(jobID, error, **context):
     if error is not None:
         for err in error.errors:
-            print ("Error code: %d \nReason: %s \nDetails: %s\n" % (err.error,err.reason, err.detail))
+            print ("Error code: %d \nReason: %s \nDetails: %s\n" % (err.error, err.reason, err.detail))
     elif jobID is not None:
-        hodClient.get_job_status(jobID, requestCompleted, **context)
+        hodClient.get_job_result(jobID, requestCompleted, **context)
 
 def requestCompleted(response, error, **context):
 	resp = ""
@@ -18,15 +18,15 @@ def requestCompleted(response, error, **context):
 		for err in error.errors:
 			if err.error == ErrorCode.QUEUED:
 				# wait for some time then call GetJobStatus or GetJobResult again with the same jobID from err.jobID
-				# print ("job is queued. Retry in 10 secs. jobID: " + err.jobID)
-				time.sleep(10)
-				hodClient.get_job_status(err.jobID, requestCompleted, **context)
+				print ("job is queued. Retry in 10 secs. jobID: " + err.jobID)
+				# time.sleep(10)
+				hodClient.get_job_result(err.jobID, requestCompleted, **context)
 				return
 			elif err.error == ErrorCode.IN_PROGRESS:
 				# wait for some time then call GetJobStatus or GetJobResult again with the same jobID from err.jobID
-				# print ("task is in progress. Retry in 10 secs. jobID: " + err.jobID)
-				time.sleep(5)
-				hodClient.get_job_status(err.jobID, requestCompleted, **context)
+				print ("task is in progress. Retry in 10 secs. jobID: " + err.jobID)
+				# time.sleep(5)
+				hodClient.get_job_result(err.jobID, requestCompleted, **context)
 				return
 			else:
 				resp += "Error code: %d \nReason: %s \nDetails: %s\njobID: %s\n" % (err.error,err.reason, err.jobID)
@@ -82,7 +82,7 @@ def requestCompleted(response, error, **context):
 hodApp = HODApps.RECOGNIZE_SPEECH
 paramArr = {}
 if hodApp == HODApps.RECOGNIZE_SPEECH:
-	paramArr["file"] = sys.argv[1]
+	paramArr["file"] = '/Users/natelevine/DevWeek16/Hackathon/Gauger/Speech2Text/R0010125.MP4'
 	# paramArr['interval'] = -1
 elif hodApp == HODApps.OCR_DOCUMENT:
 	paramArr["file"] = "testdata/review.jpg"

@@ -12,7 +12,11 @@
     "express": "^4.13.4",
     "fluent-ffmpeg": "^2.0.1",
     "fs": "0.0.2",
+    "node-oxford-emotion": "^1.0.4",
     "osc-client": "^1.1.0",
-    "osc-client-theta_s": "0.0.1"
+    "osc-client-theta_s": "0.0.1",
+    "underscore": "^1.8.3",
+    "express": "^4.13.4",
+    "socket.io": "^1.4.5"
   }
 }

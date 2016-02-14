@@ -22,8 +22,8 @@ $(function () {
 						// var series3 = this.series[2];
 						socket.on('dataUpdate', function(data) {
 							var x = (new Date()).getTime(), // current time
-							y = data.y;
-							z = data.z;
+							y = data.pos;
+							z = data.neg;
 							series.addPoint([x, y], false, true);
 							series2.addPoint([x, z], true, true);
 						})

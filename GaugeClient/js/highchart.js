@@ -37,7 +37,7 @@ var Highcharts = require('highcharts');
                 }
             },
             title: {
-                text: 'Audience Sentiment'
+                text: 'Speech Text Sentiment'
             },
             xAxis: {
                 type: 'datetime',

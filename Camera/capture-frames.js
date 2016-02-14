@@ -1,6 +1,6 @@
 var Ffmpeg = require('fluent-ffmpeg');
 
-module.exports = function (filepath, count) {
+module.exports = function (filepath, count, callback) {
 
   var computeTime = function(length, count) {
     var timemarks = [];
@@ -19,13 +19,13 @@ module.exports = function (filepath, count) {
   Ffmpeg.ffprobe(filepath, function(err, metadata) {
     var duration = metadata.format.duration;
     var proc = new Ffmpeg(filepath);
-    
+
     console.log('taking key frames')
-    return proc.takeScreenshots({
+    proc.takeScreenshots({
       count: count,
       timemarks: computeTime(duration, count),
-    }, './', function (err) {
-      console.log('saved screenshots');
+    }, './', function (err, filenames) {
+      console.log('saved screenshots: ', filenames);
     });
   });
 };
