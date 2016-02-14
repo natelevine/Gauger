@@ -1,0 +1,21 @@
+{
+  "name": "gaugefinal",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "sushiogoto <yoshio.goto@gmail.com>"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.0"
+  }
+}
