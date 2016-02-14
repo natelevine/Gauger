@@ -26,6 +26,7 @@ thetaClient.startSession().then(function (res) {
 
 // Stop capturing after a certain interval in ms
 var interval = 5000;
+// Number of keyframes to grab 
 var count = 2;
 
 setTimeout(function () {
