@@ -1,4 +1,5 @@
 from havenondemand.hodclient import *
+import sys
 
 hodClient = HODClient("b96c9bdb-1d43-4179-976d-ee8fd2e49135", "v1")
 hodApp = ""
@@ -81,7 +82,7 @@ def requestCompleted(response, error, **context):
 hodApp = HODApps.RECOGNIZE_SPEECH
 paramArr = {}
 if hodApp == HODApps.RECOGNIZE_SPEECH:
-	paramArr["file"] = raw_input()
+	paramArr["file"] = sys.argv[1]
 	# paramArr['interval'] = -1
 elif hodApp == HODApps.OCR_DOCUMENT:
 	paramArr["file"] = "testdata/review.jpg"
