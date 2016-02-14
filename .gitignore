@@ -1,2 +1,5 @@
 *.JPG
 node_modules
+.png
+.MP4
+.DS_Store

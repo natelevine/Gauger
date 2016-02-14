@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.13.4",
+    "fluent-ffmpeg": "^2.0.1",
     "fs": "0.0.2",
     "osc-client": "^1.1.0",
     "osc-client-theta_s": "0.0.1"
