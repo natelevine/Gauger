@@ -81,7 +81,7 @@ def requestCompleted(response, error, **context):
 hodApp = HODApps.RECOGNIZE_SPEECH
 paramArr = {}
 if hodApp == HODApps.RECOGNIZE_SPEECH:
-	paramArr["file"] = "/Users/Alex/Movies/Napses_Promo.mp4"
+	paramArr["file"] = raw_input()
 	# paramArr['interval'] = -1
 elif hodApp == HODApps.OCR_DOCUMENT:
 	paramArr["file"] = "testdata/review.jpg"
